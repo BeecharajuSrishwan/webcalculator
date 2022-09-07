@@ -1,0 +1,154 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+h1{
+    font-family: 'Satisfy', cursive;
+    color: black;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-left: 80px;
+    animation: mover 6s linear infinite;
+    
+}
+@keyframes mover{
+    0%{
+        text-shadow: 0 0 30px rgba(0, 0, 0, 0);
+    }
+    50%{
+        text-shadow: 0 0 30px rgba(0, 0, 0, 30);
+        transform: translatey(30px);
+    }
+    100%{
+        text-shadow: 0 0 30px rgba(0, 0, 0, 0);
+    }
+}
+body{
+    font-family:Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+body{
+    background-image: linear-gradient(to bottom right,rgba(79,51,176,1),rgb(210, 53, 165));
+}
+.cointainer{
+    height: 80vh;
+    width: 200vh;
+    display: grid;
+    place-items: center;
+}
+.cal{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #000 ;
+}
+.theme-toggler{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+.theme-toggler-active{
+    color: #333; 
+}
+.theme-toggler-active::before{
+    background-color: #fff;
+}
+.theme-toggler ::before{
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+}
+#display{
+    margin: 0 10px;
+    height: 150px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+}
+#display::-webkit-scrollbar{
+    display: block;
+    height: 3px;
+}
+button{
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+button:hover{
+    transform: scale(1.15);
+}
+button#equal{
+    height: 130px;
+}
+
+/*-----light theme----*/
+.cal{
+    background-color: #fff;
+}
+.cal#clear{
+    color: #0a1e23;
+}
+.cal button#clear{
+    background-color: #ffd5d8;
+    color: #fc4552;
+}
+.cal button.btn-number{
+    background-color: #c3eaff;
+    color: #000;
+}
+.cal button.btn-operator{
+    background-color: #ffd0fd;
+    color: #f967f3;
+}
+.cal button.btn-equal{
+    background-color: #adf9e7;
+    color: #000;
+}
+/*-----dark theme----*/
+.cal.dark{
+    background-color: #071115;
+}
+.cal.dark #display{
+    color: #f8fafd;
+}
+.cal.dark button #clear{
+    background-color: #2d191e;
+    color: #bd3740;
+}
+.cal.dark button.btn-number{
+    background-color: #1b2f38;
+    color: #f8fafb;
+}
+.cal.dark button.btn-operator{
+    background-color: #2e1f39;
+    color: #aa00a4;
+} 
+.cal.dark button.btn-equal{
+    background-color: #223323;
+    color: #ffffff;
+}
